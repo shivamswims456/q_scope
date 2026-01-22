@@ -4,6 +4,7 @@ from pypika import Query, Table, Parameter
 
 from q_scope.implementations.datastrutures import OAuthClient
 from q_scope.implementations.store.templates import ClientTable
+from q_scope.implementations.store.sqllite.pypika_imp import oauth_clients  
 
 
 
