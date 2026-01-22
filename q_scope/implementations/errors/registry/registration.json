@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "name": "client-registration-error-registry",
+    "version": "1.0.0",
+    "description": "Canonical error codes for OAuth client registration",
+    "authoritative": true
+  },
+
+  "errors": {
+    "registration.invalid_request": {
+      "category": "input",
+      "description": "The registration request is structurally invalid or internally inconsistent."
+    },
+
+    "registration.client_identifier_conflict": {
+      "category": "conflict",
+      "description": "The requested client_identifier already exists."
+    },
+
+    "registration.secret_generation_failed": {
+      "category": "internal",
+      "description": "The client secret could not be generated."
+    },
+
+    "registration.secret_hashing_failed": {
+      "category": "internal",
+      "description": "The client secret could not be securely hashed."
+    },
+
+    "registration.persistence_failed": {
+      "category": "internal",
+      "description": "The client could not be persisted to storage."
+    },
+
+    "registration.audit_log_failed": {
+      "category": "non_fatal",
+      "description": "Audit logging failed during client registration."
+    },
+
+    "registration.unsupported_configuration": {
+      "category": "input",
+      "description": "The requested client configuration is not supported by this server."
+    }
+  }
+}
+

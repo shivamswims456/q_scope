@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "name": "oauth-error-registry",
+    "version": "1.0.0",
+    "description": "Canonical OAuth2 error code registry (RFC 6749, RFC 8628)",
+    "authoritative": true
+  },
+
+  "errors": {
+    "oauth.invalid_request": {
+      "rfc": "RFC6749",
+      "section": "4.1.2.1",
+      "description": "The request is missing a required parameter, includes an unsupported parameter value, repeats a parameter, or is otherwise malformed."
+    },
+
+    "oauth.unauthorized_client": {
+      "rfc": "RFC6749",
+      "section": "4.1.2.1",
+      "description": "The client is not authorized to request an authorization code using this method."
+    },
+
+    "oauth.access_denied": {
+      "rfc": "RFC6749",
+      "section": "4.1.2.1",
+      "description": "The resource owner or authorization server denied the request."
+    },
+
+    "oauth.unsupported_response_type": {
+      "rfc": "RFC6749",
+      "section": "4.1.2.1",
+      "description": "The authorization server does not support obtaining an authorization code using this method."
+    },
+
+    "oauth.invalid_scope": {
+      "rfc": "RFC6749",
+      "section": "4.1.2.1",
+      "description": "The requested scope is invalid, unknown, or malformed."
+    },
+
+    "oauth.server_error": {
+      "rfc": "RFC6749",
+      "section": "4.1.2.1",
+      "description": "The authorization server encountered an unexpected condition that prevented it from fulfilling the request."
+    },
+
+    "oauth.temporarily_unavailable": {
+      "rfc": "RFC6749",
+      "section": "4.1.2.1",
+      "description": "The authorization server is currently unable to handle the request due to temporary overloading or maintenance."
+    },
+
+    "oauth.invalid_client": {
+      "rfc": "RFC6749",
+      "section": "5.2",
+      "description": "Client authentication failed."
+    },
+
+    "oauth.invalid_grant": {
+      "rfc": "RFC6749",
+      "section": "5.2",
+      "description": "The provided authorization grant or refresh token is invalid, expired, revoked, or does not match the redirect URI."
+    },
+
+    "oauth.unsupported_grant_type": {
+      "rfc": "RFC6749",
+      "section": "5.2",
+      "description": "The authorization grant type is not supported by the authorization server."
+    },
+
+    "oauth.invalid_token": {
+      "rfc": "RFC6750",
+      "section": "3.1",
+      "description": "The access token is invalid, expired, or revoked."
+    },
+
+    "oauth.insufficient_scope": {
+      "rfc": "RFC6750",
+      "section": "3.1",
+      "description": "The request requires higher privileges than provided by the access token."
+    },
+
+    "oauth.device.authorization_pending": {
+      "rfc": "RFC8628",
+      "section": "3.5",
+      "description": "The authorization request is still pending and the user has not yet completed the authorization step."
+    },
+
+    "oauth.device.slow_down": {
+      "rfc": "RFC8628",
+      "section": "3.5",
+      "description": "The client is polling too frequently and should slow down."
+    },
+
+    "oauth.device.expired_token": {
+      "rfc": "RFC8628",
+      "section": "3.5",
+      "description": "The device code has expired and the device authorization session has concluded."
+    },
+
+    "oauth.device.access_denied": {
+      "rfc": "RFC8628",
+      "section": "3.5",
+      "description": "The end user denied the authorization request."
+    }
+  }
+}
+
