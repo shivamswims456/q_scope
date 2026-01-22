@@ -1,0 +1,11 @@
+# Testing dependencies for q_scope OAuth2 framework
+
+# Core testing framework
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Already project dependencies (listed for completeness)
+aiosqlite>=0.19.0
+pypika>=0.48.9
+argon2-cffi>=23.1.0

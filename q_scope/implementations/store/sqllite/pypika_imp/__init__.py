@@ -27,6 +27,35 @@ oauth_clients = Table(
 
 
 # =====================================================
+# Client Configurations
+# =====================================================
+
+oauth_client_configs = Table(
+    "oauth_client_configs",
+    schema=schema
+)
+
+# Columns (reference)
+# client_id (FK to oauth_clients.id)
+# response_types
+# require_pkce
+# pkce_methods
+# access_token_ttl
+# refresh_token_ttl
+# authorization_code_ttl
+# max_active_access_tokens
+# max_active_refresh_tokens
+# device_code_ttl
+# device_poll_interval
+# metadata
+# created_at
+# created_by
+# updated_at
+# updated_by
+
+
+
+# =====================================================
 # Users (reference only)
 # =====================================================
 

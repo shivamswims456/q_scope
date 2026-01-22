@@ -17,15 +17,12 @@ class SuccessResult:
 
 
 
-
 @dataclass(kw_only=True, slots=True)
 class FailedResult:
     status:bool = field(default=False)
     client_message:Any = field(default=None)
     ray_id:str
     error_code:str
-
-
 
 
 
@@ -51,7 +48,39 @@ class OAuthClient(AuditFields):
     is_enabled: bool
 
 
-
+@dataclass(kw_only=True, slots=True)
+class OAuthClientConfig(AuditFields):
+    """
+    Client configuration settings.
+    
+    This dataclass stores OAuth client-specific configuration that controls
+    flow behavior, token lifetimes, and security policies.
+    
+    Has a 1:1 relationship with OAuthClient via client_id.
+    """
+    client_id: str
+    
+    # ---- Response types ----
+    response_types: str  # Space-separated (e.g., "code token")
+    
+    # ---- PKCE & security posture ----
+    require_pkce: bool
+    pkce_methods: str | None  # Space-separated (e.g., "S256 plain"), null if PKCE not used
+    
+    # ---- Token & lifecycle limits ----
+    access_token_ttl: int  # Seconds
+    refresh_token_ttl: int | None  # Seconds, null if refresh tokens not allowed
+    authorization_code_ttl: int  # Seconds
+    
+    max_active_access_tokens: int | None  # Null = unlimited
+    max_active_refresh_tokens: int | None  # Null = unlimited
+    
+    # ---- Device flow constraints ----
+    device_code_ttl: int | None  # Seconds, null if device flow not supported
+    device_poll_interval: int | None  # Seconds, null if device flow not supported
+    
+    # ---- Operational metadata ----
+    metadata: str | None  # JSON string or key-value pairs
 
 
 @dataclass(kw_only=True, slots=True)
