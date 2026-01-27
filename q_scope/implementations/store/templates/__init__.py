@@ -80,6 +80,30 @@ class AccessTokenTable(BaseTable[AccessToken], ABC):
         if row is not None:
             await self.delete_by_id(row.id, ray_id=ray_id)
 
+    @abstractmethod
+    async def count_by_refresh_token(
+        self,
+        refresh_token_id: str,
+        ray_id: str
+    ) -> int:
+        """
+        Count active access tokens associated with a refresh token.
+        Required for token limit enforcement.
+        """
+        ...
+
+    @abstractmethod
+    async def get_oldest_by_refresh_token(
+        self,
+        refresh_token_id: str,
+        ray_id: str
+    ) -> Optional[AccessToken]:
+        """
+        Get the oldest active access token associated with a refresh token.
+        Required for FIFO revocation.
+        """
+        ...
+
 
 
 class RefreshTokenTable(BaseTable[RefreshToken], ABC):
